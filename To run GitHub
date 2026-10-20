@@ -1,0 +1,22 @@
+git init -b main
+git add .
+git commit -m "Add expo app and CI workflow"
+git remote set-url origin git@github.com:marianagmmacedo/expo.git
+git push -u origin main
+git checkout -b test
+git push -u origin test
+
+Add:
+mkdir -p .github/workflows
+mv ci.yml .github/workflows/ci.yml
+
+
+Create error on broken branch:
+multiplication instead of expo
+git push --set-upstream origin broken
+
+Merge:
+git checkout main
+git pull
+git merge broken
+git push
